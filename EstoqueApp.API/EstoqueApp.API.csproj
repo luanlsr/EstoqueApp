@@ -15,6 +15,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EstoqueApp.Application\EstoqueApp.Application.csproj" />
+    <ProjectReference Include="..\EstoqueApp.Domain\EstoqueApp.Domain.csproj" />
+    <ProjectReference Include="..\EstoqueApp.Infra.Data.MongoDB\EstoqueApp.Infra.Data.MongoDB.csproj" />
+    <ProjectReference Include="..\EstoqueApp.Infra.Data.SqlServer\EstoqueApp.Infra.Data.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>

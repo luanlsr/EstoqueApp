@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Application.Interfaces
+namespace EstoqueApp.Application.Interfaces.Services
 {
     public interface IProdutoAppServices
     {

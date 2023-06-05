@@ -10,3 +10,6 @@ C:\Projetos\EstoqueApp\EstoqueApp.Application\obj\Debug\net7.0\EstoqueApp.Applic
 C:\Projetos\EstoqueApp\EstoqueApp.Application\obj\Debug\net7.0\refint\EstoqueApp.Application.dll
 C:\Projetos\EstoqueApp\EstoqueApp.Application\obj\Debug\net7.0\EstoqueApp.Application.pdb
 C:\Projetos\EstoqueApp\EstoqueApp.Application\obj\Debug\net7.0\ref\EstoqueApp.Application.dll
+C:\Projetos\EstoqueApp\EstoqueApp.Application\bin\Debug\net7.0\EstoqueApp.Domain.dll
+C:\Projetos\EstoqueApp\EstoqueApp.Application\bin\Debug\net7.0\EstoqueApp.Domain.pdb
+C:\Projetos\EstoqueApp\EstoqueApp.Application\obj\Debug\net7.0\EstoqueApp.Application.csproj.CopyComplete

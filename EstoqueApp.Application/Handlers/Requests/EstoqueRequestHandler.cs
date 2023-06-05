@@ -1,6 +1,9 @@
 ﻿using EstoqueApp.Application.Models.Commands;
 using EstoqueApp.Application.Models.Queries;
 using EstoqueApp.Application.Notifications;
+using EstoqueApp.Domain.Domain;
+using EstoqueApp.Domain.Interfaces.Services;
+using EstoqueApp.Domain.Services;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -16,16 +19,32 @@ namespace EstoqueApp.Application.Handlers.Requests
         IRequestHandler<EstoqueDeleteCommand, EstoqueQuery>
     {
         private readonly IMediator _mediator;
+        private readonly IEstoqueDomainService _estoqueDomainService;
 
-        public EstoqueRequestHandler(IMediator mediator)
+        public EstoqueRequestHandler(IMediator mediator, IEstoqueDomainService estoqueDomainService)
         {
             _mediator = mediator;
+            _estoqueDomainService = estoqueDomainService;
         }
 
         public async Task<EstoqueQuery> Handle(EstoqueCreateCommand request, CancellationToken cancellationToken)
         {
-            //TODO Realizar o cadastro do estoque no domínio
-            var estoqueQuery = new EstoqueQuery();
+            var estoque = new Estoque
+            {
+                Id = Guid.NewGuid(),
+                Nome = request.Nome,
+                Descricao = request.Descricao,
+            };
+
+            _estoqueDomainService.Add(estoque);
+
+            var estoqueQuery = new EstoqueQuery
+            {
+                Id = estoque.Id,
+                Nome = estoque.Nome,
+                Descricao = estoque.Descricao,
+            };
+
             await _mediator.Publish(
                 new EstoqueNotification
                 {
@@ -33,7 +52,6 @@ namespace EstoqueApp.Application.Handlers.Requests
                     Estoque = estoqueQuery
                 }
             );
-            await Console.Out.WriteLineAsync("Estoque Cadastrado");
 
             return estoqueQuery;
         }

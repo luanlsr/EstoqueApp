@@ -6,9 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRouting(map => map.LowercaseUrls = true);
 builder.Services.AddControllers();
 builder.Services.AddSwaggerDoc();
-builder.Services.AddServices();
-builder.Services.AddMediatR();
 builder.Services.AddCorsPolicy();
+builder.Services.AddEntityFramework(builder.Configuration);
+builder.Services.AddServices(builder.Configuration);
+builder.Services.AddMediatR();
 
 #endregion
 #region builder
@@ -16,9 +17,7 @@ var app = builder.Build();
 
 app.UseSwaggerDoc();
 app.UseCorsPolicy();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

@@ -149,6 +149,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "EstoqueApp.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/EstoqueApp.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/EstoqueApp.Domain.dll": {}
+        }
       }
     }
   },
@@ -393,12 +403,18 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "EstoqueApp.Domain/1.0.0": {
+      "type": "project",
+      "path": "../EstoqueApp.Domain/EstoqueApp.Domain.csproj",
+      "msbuildProject": "../EstoqueApp.Domain/EstoqueApp.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "AutoMapper >= 12.0.1",
       "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1",
+      "EstoqueApp.Domain >= 1.0.0",
       "MediatR >= 11.1.0",
       "MediatR.Extensions.Microsoft.DependencyInjection >= 11.1.0"
     ]
@@ -435,7 +451,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projetos\\EstoqueApp\\EstoqueApp.Domain\\EstoqueApp.Domain.csproj": {
+              "projectPath": "C:\\Projetos\\EstoqueApp\\EstoqueApp.Domain\\EstoqueApp.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

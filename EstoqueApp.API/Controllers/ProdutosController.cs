@@ -1,4 +1,4 @@
-﻿using EstoqueApp.Application.Interfaces;
+﻿using EstoqueApp.Application.Interfaces.Services;
 using EstoqueApp.Application.Models.Commands;
 using EstoqueApp.Application.Models.Queries;
 using Microsoft.AspNetCore.Http;
